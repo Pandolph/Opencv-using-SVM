@@ -12,12 +12,12 @@ using namespace cv::ml;
 
 int main()
 {
-    Mat srcImg = imread("/Users/pan/Desktop/SVM/SVM/test.tif");
+    Mat srcImg = imread("/Users/pan/Desktop/SVM/SVM/m.tif");
     Mat desImg = srcImg.clone();
     imshow("rawImg", srcImg);
     // 选取目标区域和背景区域
-    Mat BackImg = srcImg(Rect(199, 0, 30, 30)); //2D, Rect(x,y,width,height)
-    Mat ForeImg = srcImg(Rect(38, 95, 30, 30));
+    Mat BackImg = srcImg(Rect(100, 0, 30, 30)); //2D, Rect(x,y,width,height)
+    Mat ForeImg = srcImg(Rect(256, 256, 30, 30));
     int k = srcImg.channels();
     printf("k=%d",k);
     
@@ -76,7 +76,7 @@ int main()
         }
     }
     
-    imwrite("result.jpg", desImg);
+    imwrite("/Users/pan/Desktop/SVM/SVM/result.jpg", desImg);
     imshow("resImg", desImg);
     
     waitKey(0);
